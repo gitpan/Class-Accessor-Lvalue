@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: Class-Accessor-Lvalue
-version: 0.01
+version: 0.10
 license: perl
 distribution_type: module
 requires:
@@ -13,7 +13,10 @@ conflicts: {}
 provides:
   Class::Accessor::Lvalue:
     file: lib/Class/Accessor/Lvalue.pm
-    version: 0.01
+    version: 0.10
   Class::Accessor::Lvalue::Fast:
     file: lib/Class/Accessor/Lvalue/Fast.pm
+  Class::Accessor::Lvalue::Tied:
+    file: lib/Class/Accessor/Lvalue.pm
+    version: 0.10
 generated_by: Module::Build version 0.21

@@ -12,9 +12,6 @@ sub make_accessor {
     };
 }
 
-# ro is easy - return a regular accessor and perl will bitch that it's
-# not lvalueable
-
 sub make_ro_accessor {
     my($class, $field) = @_;
 
@@ -29,8 +26,6 @@ sub make_ro_accessor {
         return $self->{$field};
     };
 }
-
-# wo will probably need Want
 
 sub make_wo_accessor {
     my($class, $field) = @_;
@@ -70,15 +65,6 @@ Class::Accessor::Lvalue::Fast - create simplified Lvalue accessors
 
 This module subclassess L<Class::Accessor::Fast> in order to provide
 lvalue accessors.
-
-=head1 IMPLEMENTATION NOTES
-
-You may have noted that this accessor-maker only comes in a ::Fast
-variant.  This is because the non-fast variant would use an
-indirection through ->get and ->set methods - I couldn't at the time
-of writing see a way to make that lvaluable.
-
-If you have a suggestion for that, I'd like to hear from you.
 
 =head1 AUTHOR
 

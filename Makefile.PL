@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile
   (
    NAME        => 'Class::Accessor::Lvalue',
-   VERSION     => '0.01',
+   VERSION     => '0.10',
    PL_FILES    => {},
    INSTALLDIRS => 'site',
    PREREQ_PM   => {
