@@ -1,8 +1,18 @@
-README for Class::Accessor::Lvalue 0.01
+README for Class::Accessor::Lvalue 0.11
 
 =head1 NAME
 
 Class::Accessor::Lvalue - create Lvalue accessors
+
+=head1 SYNOPSIS
+
+ package Foo;
+ use base qw( Class::Accessor::Lvalue );
+ __PACKAGE__->mk_accessors(qw( bar ))
+
+ my $foo = Foo->new;
+ $foo->bar = 42;
+ print $foo->bar; # prints 42
 
 
 =head1 DEPENDENCIES
@@ -27,6 +37,18 @@ What changed over the last 3 revisions
 
 =over
 
+=item 0.11	Tuesday 16th December, 2003
+
+	Fix MANIFEST
+	add NINJA support.
+
+
+=item 0.10	Monday, 15th December, 2003
+
+	Implement proper proxy ties so that the main class correctly emulates
+	Class::Accessor
+
+
 =item 0.01	Friday, 12th December, 2003
 
 	Initial CPAN release
@@ -34,7 +56,9 @@ What changed over the last 3 revisions
 
 =head1 AUTHOR
 
-Richard Clamp <richardc@unixbeard.net>
+Richard Clamp <richardc@unixbeard.net> with many thanks to Yuval
+Kogman for helping with the groovy lvalue tie magic used in the main
+class.
 
 =head1 COPYRIGHT
 
